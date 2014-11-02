@@ -76,11 +76,17 @@ public class StringExamples {
         System.out.println(a);
     }
 
+    /**
+     * method that provides examples of working with Strings
+     */
     public static void workWithStrings() {
         indexOfEx();
         substringEx();
     }
 
+    /**
+     * method that provides examples of String.indexOf()
+     */
     public static void indexOfEx() {
         String a = "Hello World!";
         //what will the following line print?
@@ -92,6 +98,9 @@ public class StringExamples {
         System.out.println(a.indexOf("a"));
     }
 
+    /**
+     * method that provides examples for String.substring()
+     */
     public static void substringEx() {
         String a = "Hello World!";
         String b = a.substring(6);
