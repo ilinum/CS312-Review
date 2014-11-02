@@ -4,7 +4,8 @@
  * Class that contains following examples concerning Strings:
  *
  * 1. String equality
- * 2.
+ * 2. Strings as parameters
+ * 3. String methods (charAt(), indexOf(), contains(), substring())
  */
 public class StringExamples {
 
@@ -13,15 +14,14 @@ public class StringExamples {
     }
 
     public static void stringEquality() {
-        String a = "a" + "b" + "c";
-        String b = "abc";
-        //TODO: find out why a == b returns true
+        String a = "abc";
+        String b = "abcd";
+        String c = b.substring(0, 3);
         //are they equal?
-        testEquality(a, b);
-        a = b;
+        testEquality(a, c);
+        a = c;
         //are they equal now?
-        testEquality(a, b);
-
+        testEquality(a, c);
     }
 
     /**
@@ -34,3 +34,4 @@ public class StringExamples {
         System.out.println("a.equals(b): " + (a.equals(b)));
     }
 }
+
