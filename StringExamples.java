@@ -5,14 +5,31 @@
  *
  * 1. String equality
  * 2. Strings as parameters
- * 3. String methods (charAt(), indexOf(), contains(), substring())
+ * 3. String methods (charAt(), indexOf(), contains(), substring()). Not going to go all over them here.
+ * 4.
+ *
+ * A lot of String methods you need to know are here:
+ * http://www.cs.utexas.edu/~scottm/cs312/handouts/slides/topic13_procedural_design.pdf
  */
 public class StringExamples {
 
     public static void main(String[] args) {
 //        stringEquality();
 //        stringAsParameters();
-        workWithStrings();
+//        workWithStrings();
+
+
+        //examples to do:
+        //1. Implement indexOf()
+        //2. Implement contains()
+        //3. Implement replace(str1, str2) <---- this one should be interesting
+        //4. Implement substring()
+        //5. Implement startsWith()
+        //6. Implement endsWith()
+        //7. Implement toUpperCase()
+        //8. Reverse characters in a String
+        //9. Make all lower case letters upper case and all upper case lower case
+
     }
 
     /**
@@ -60,6 +77,11 @@ public class StringExamples {
     }
 
     public static void workWithStrings() {
+        indexOfEx();
+        substringEx();
+    }
+
+    public static void indexOfEx() {
         String a = "Hello World!";
         //what will the following line print?
         System.out.println(a.indexOf("e"));
@@ -68,6 +90,10 @@ public class StringExamples {
         //and this?
         System.out.println(a.indexOf("w"));
         System.out.println(a.indexOf("a"));
+    }
+
+    public static void substringEx() {
+        String a = "Hello World!";
         String b = a.substring(6);
         //what is a and b now?
         System.out.println("a: " + a);
