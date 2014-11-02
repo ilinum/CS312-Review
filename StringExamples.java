@@ -12,6 +12,7 @@ public class StringExamples {
     public static void main(String[] args) {
 //        stringEquality();
 //        stringAsParameters();
+        workWithStrings();
     }
 
     /**
@@ -56,6 +57,25 @@ public class StringExamples {
         System.out.println(a);
         a = "ef";
         System.out.println(a);
+    }
+
+    public static void workWithStrings() {
+        String a = "Hello World!";
+        //what will the following line print?
+        System.out.println(a.indexOf("e"));
+        //what about this?
+        System.out.println(a.indexOf("o"));
+        //and this?
+        System.out.println(a.indexOf("w"));
+        System.out.println(a.indexOf("a"));
+        String b = a.substring(6);
+        //what is a and b now?
+        System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        //what is c now?
+        String c = a.substring(3, 6);
+        //what will happen if you do this?
+        String d = a.substring(3, 1);
     }
 }
 
