@@ -29,7 +29,9 @@ public class StringExamples {
         //7. Implement toUpperCase()
         //8. Reverse characters in a String
         //9. Make all lower case letters upper case and all upper case lower case
-
+        //10. Implement insert(int charToInsert, int indexToInsertAt)
+        //11. Count number of occurrences of a String in a String  <------- and this one
+        //12. Merge two Strings together (for example, example mergeString("abcd", "efgh") would return "arbfcgdh")
     }
 
     /**
@@ -52,6 +54,7 @@ public class StringExamples {
      * @param b second String
      */
     public static void testEquality(String a, String b) {
+        System.out.printf("String a: %s, String b: %s\n", a, b);
         System.out.println("a == b: " + (a == b));
         System.out.println("a.equals(b): " + (a.equals(b)));
     }
