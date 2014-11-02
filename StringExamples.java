@@ -10,9 +10,13 @@
 public class StringExamples {
 
     public static void main(String[] args) {
-        stringEquality();
+//        stringEquality();
+//        stringAsParameters();
     }
 
+    /**
+     * method that provides examples about String equality
+     */
     public static void stringEquality() {
         String a = "abc";
         String b = "abcd";
@@ -32,6 +36,26 @@ public class StringExamples {
     public static void testEquality(String a, String b) {
         System.out.println("a == b: " + (a == b));
         System.out.println("a.equals(b): " + (a.equals(b)));
+    }
+
+    /**
+     * Method that provides some example for Strings used as parameters
+     */
+    public static void stringAsParameters() {
+        String a = "abc";
+        manipulateString(a);
+        System.out.println(a);
+    }
+
+    /**
+     * a helper method for stringAsParameters().
+     * @param a String passed in
+     */
+    public static void manipulateString(String a) {
+        a += "d";
+        System.out.println(a);
+        a = "ef";
+        System.out.println(a);
     }
 }
 
