@@ -1,6 +1,0 @@
-5
-Bill 2
-Jill 1
-Bob 3
-Carol 5
-Jack 4

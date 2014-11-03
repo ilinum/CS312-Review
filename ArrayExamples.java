@@ -24,6 +24,11 @@ public class ArrayExamples {
 //        arraysAsParametersHard();
 //        arraysSet();
 //        arrayEquality();
+        
+//        int[] a = {1, 2, 3, 4, 5, 6};
+//        reverseElementsInArray(a);
+//        System.out.println(Arrays.toString(a));
+
 
         //examples to do:
         //1. Write a method that reverses all elements in the array
@@ -45,19 +50,21 @@ public class ArrayExamples {
         System.out.println(array[0]); //what will this print?
         System.out.println(array[4]);
         System.out.println(array[5]);
-        System.out.println(array[6]);
+//        System.out.println(array[6]);
         printArray(array);
         //let's print all of the values!
         //we could use Arrays.toString(array) but that's too easy
     }
 
     /**
-     * prints an array
+     * prints an array. You could just use Arrays.toString(array)
      * @param array array to print
      */
     public static void printArray(int[] array) {
-        System.out.println(Arrays.toString(array));
-//        System.out.println(array); //fix this method!
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
+        System.out.println();
     }
 
     /**
@@ -108,6 +115,7 @@ public class ArrayExamples {
         String[] stringArray = new String[8];
         //what is in stringArray[2]?
         System.out.println("stringArray[2]: " + stringArray[2]);
+        stringArray[2].indexOf("i");
         //what do all values contain?
         System.out.println(Arrays.toString(stringArray));
     }
@@ -116,7 +124,7 @@ public class ArrayExamples {
      * Method with an example of an array passed as a parameter
      */
     public static void arraysAsParametersEasy() {
-        int[] a = {2, 1, 5, -10, -1, 2, 6, 23, 6653};
+        int[] a = {2, 1, 5, -10};
         arrayManipulation(a);
         //what is 'a' now?
         printArray(a);
@@ -133,20 +141,21 @@ public class ArrayExamples {
         printArray(b);
         b = new int[9];
         b[3] = 1;
+        printArray(b);
         b = new int[2];
         b[1] = 3;
-//        printArray(b);
+        printArray(b);
     }
 
     /**
      * Method with an example of an array passed as a parameter
      */
     public static void arraysAsParametersHard() {
-        int[] c = {2, 1, 5, -10, -1, 2, 6, 23, 6653};
-        printArray(c);
-        arrayManipulation(c, c);
+        int[] e = {2, 1, 5, -10, -1, 2, 6};
+        printArray(e);
+        arrayManipulation(e, e);
         //what is 'a' now?
-        printArray(c);
+        printArray(e);
     }
 
     /**
@@ -179,7 +188,7 @@ public class ArrayExamples {
      * @param b second argument
      */
     public static void areEqual(int a, int b) {
-        if(a == b) {
+        if (a == b) {
             System.out.println("Equal!");
         } else {
             System.out.println("Not equal!");
@@ -209,7 +218,7 @@ public class ArrayExamples {
         //are they equal?
         testEquality(a, b);
          b = a;
-        //are they equal now?
+//        are they equal now?
         testEquality(a, b);
         b[0] = 2;
         //are they still equal now?
@@ -225,5 +234,30 @@ public class ArrayExamples {
         System.out.println("a == b: " + (a == b));
         System.out.println("a.equals(b): " + (a.equals(b)));
         System.out.println("Arrays.equals(a, b): " + Arrays.equals(a, b));
+    }
+
+    /**
+     * method that reverses all the elements in an array
+     * @param a array to reverse. Is not changed
+     * @return the reversed array
+     */
+    public static int[] reverseElementsInArrayNaive(int[] a) {
+        int[] res = new int[a.length];
+        for (int i = a.length - 1; i >= 0; i--) {
+            res[a.length - 1 - i] = a[i];
+        }
+        return res;
+    }
+
+    /**
+     * method that reverses all the lements in an array
+     * @param a array to reverse. Is changed
+     */
+    public static void reverseElementsInArray(int[] a) {
+        for (int i = 0; i < a.length / 2; i++) {
+            int temp = a[i];
+            a[i] = a[a.length - i - 1];
+            a[a.length - i - 1] = temp;
+        }
     }
 }

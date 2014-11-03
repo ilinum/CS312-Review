@@ -1,5 +1,3 @@
-package test;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,18 +6,26 @@ class ScanExamples
 {
 	public static void main(String[] args) throws FileNotFoundException
 	{
+//        Scanner s1 = new Scanner("Bob\n5 77\n");
+//        System.out.println(containsNum(s1, -2));
+//
+//        Scanner console = new Scanner("bob\nmary");
+//        System.out.println(console.nextLine());
+
 		//Examine the following examples and determine whether or not they will produce the expected output:
 		
 		//EXAMPLE A:
 		//test1.txt contains a list of integers, one on each line
 		Scanner scan = new Scanner(new File("test1.txt"));
 		System.out.println(countNumbers1(scan));
+
+
 		
 		//EXAMPLE B:
 		//test2.txt contains a list of scores. The first line holds a name, second a score,
 		//third a name, fourth a score, and so on.
 		scan = new Scanner(new File("test2.txt"));
-		System.out.println(countNumbers2(scan));
+		System.out.println(countNumbers2Fixed(scan));
 		
 		//EXAMPLE C:
 		//test3.txt contains a list of scores for each student over the course of the semester. 
@@ -27,7 +33,7 @@ class ScanExamples
 		//third a name, fourth a list of scores separated by at least one space, and so on.
 		//The file terminates in a blank line
 		scan = new Scanner(new File("test3.txt"));
-		countNumbers3(scan);
+		countNumbers3Fixed(scan);
 		
 		//EXAMPLE D:
 		//test4.txt contains a list of rankings. The first line says how many people are ranked.
@@ -37,7 +43,7 @@ class ScanExamples
 		scan = new Scanner(new File("test4.txt"));
 		printByRank(scan);
 		
-		//EXAMPE E:
+		//EXAMPLE E:
 		//Write a method containsNumber(Scan scan, int n)
 		//Returns true if the number n is present in the file, and false otherwise
 		scan = new Scanner(new File("test4.txt"));
@@ -100,7 +106,7 @@ class ScanExamples
 		while(scan.hasNextLine())
 		{
 			String name = scan.next();
-			namesInOrder[scan.nextInt()] = name;
+			namesInOrder[scan.nextInt() - 1] = name;
 			scan.nextLine();
 		}
 		
@@ -113,7 +119,25 @@ class ScanExamples
 	//EXAMPLE E:
 	public static boolean containsNum(Scanner scan, int n)
 	{
-		return true;
+        while (scan.hasNextLine())
+        {
+            String lineString = scan.nextLine();
+            Scanner line = new Scanner(lineString);
+            while(line.hasNext())
+            {
+                if (line.hasNextInt())
+                {
+                    int i = line.nextInt();
+                    if (i == n)
+                        return true;
+                }
+                else
+                {
+                    line.next();
+                }
+            }
+        }
+		return false;
 	}
 	
 	
