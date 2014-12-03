@@ -1,5 +1,4 @@
 CS 312 Review
-
 ===============
 
 This repo contains files used for review for CS312 (Intro to Programming) course.
