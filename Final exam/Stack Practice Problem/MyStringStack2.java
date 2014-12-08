@@ -1,9 +1,9 @@
 
 public class MyStringStack2 implements MyStack{
 
-	String[] container;
-	int top;
-	
+	private String[] container;
+	private int top;
+
 	public MyStringStack2(int maxSize)
 	{
 		container = new String[maxSize];

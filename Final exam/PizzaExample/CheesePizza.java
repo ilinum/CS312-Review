@@ -34,7 +34,9 @@ public class CheesePizza implements Pizza {
     //does this pizza contain meat?
     public boolean isVeggie() {
         ArrayList<String> ingredients = getIngredients();
-        return !(ingredients.contains("meat") || ingredients.contains("pepperoni") || ingredients.contains("ham"));
+        return !(ingredients.contains("meat")
+                || ingredients.contains("pepperoni")
+                || ingredients.contains("ham"));
     }
 
     //print word "yum" slices times
